@@ -1,9 +1,6 @@
+import Login from '@/components/authentication/login/Login'
+import Navigationbar from '@/components/navbar/Navigationbar'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import Navigationbar from '@/components/navbar/Navbar'
-import SideBar from '@/components/sidebar/Sidebar'
-import Login from '@/components/authentication/login/login'
 
 export default function Home() {
   return (
@@ -13,7 +10,8 @@ export default function Home() {
       </Head>
       <main className='h-full'>
         <div className='h-full w-full'>
-          <Navigationbar/>
+          {/*Aca va ir la nueva importacion a probar */}
+        <Navigationbar/>
         </div>
       </main>
     </>

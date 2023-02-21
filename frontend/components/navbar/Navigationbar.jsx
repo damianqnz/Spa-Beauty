@@ -1,4 +1,5 @@
 import { Button, Navbar } from "flowbite-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const Navigationbar = () => {
@@ -6,7 +7,7 @@ const Navigationbar = () => {
 
   const handleOpenMenu = (e) => {
     e.preventDefault();
-    setMenu(true)
+    setMenu(!menu)
   }
 
   const handleCloseMenu = (e) => {
@@ -37,7 +38,9 @@ const Navigationbar = () => {
             <div className="h-screen w-full bg-black/50 absolute flex flex-row pt-[10rem] justify-center">
               <div className="flex flex-col gap-6">
                 <p className="font-roboto text-3xl">Home</p>
-                <p className="font-roboto">Contact</p>
+                <a href='#contact'>
+                  <p className="font-roboto">Contact</p>
+                </a>
                 <p className="font-roboto">About</p>
                 <p className="font-roboto">Shop</p>
                 <p className="font-roboto">Service</p>

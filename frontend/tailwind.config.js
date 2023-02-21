@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -11,7 +12,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily:{
-      roboto: ["Roboto", "sans-serif"]
+      roboto: ["Roboto", "sans-serif"],
+      Poiret: ["Poiret One", "cursive"],
     }
   },
   plugins: [ require("flowbite/plugin")
