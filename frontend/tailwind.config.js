@@ -14,7 +14,20 @@ module.exports = {
     fontFamily:{
       roboto: ["Roboto", "sans-serif"],
       Poiret: ["Poiret One", "cursive"],
-    }
+      Primary: ["Poppins"],
+    },
+    container: {
+      padding: {
+        default: '30px',
+        lg: '0',
+      },
+    },
+    extend: {
+      colors: {
+        Primary: '#222222',
+        secondary: '#F5E6E0',
+      },
+    },
   },
   plugins: [ require("flowbite/plugin")
   ],

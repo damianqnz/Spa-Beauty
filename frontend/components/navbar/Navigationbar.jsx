@@ -1,6 +1,9 @@
 import { Button, Navbar } from "flowbite-react";
 import Link from "next/link";
 import { useState } from "react";
+import Contact from "../contact/Contact";
+
+
 
 const Navigationbar = () => {
   const [menu, setMenu] = useState(false)
@@ -17,39 +20,37 @@ const Navigationbar = () => {
 
   return (
     // div padre
-    <div className="w-full">
-      <div className="w-full flex flex-row opacity-100">
-        <div className="basis-1/2 flex flex-row justify-start items-center gap-2">
-          <img className="basis-[20%] w-[70px] h-[50px]" src='/logoKimka.png'/>
-          <p className="basis-[80%]">
-            Kimka
-          </p>
+    <div className="w-full"> {/* Hamburger Menu Icon */}
+      <div className="flex flex-row items-center cursor-pointer">
+        <div className="basis-1/3">
         </div>
-        <div className="basis-1/2 flex flex-row justify-end items-center">
-          <div className="px-4">
-              <svg onClick={(e) => handleOpenMenu(e)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+        <div className="basis-1/3 flex flex-row justify-center">
+          <img className='w-[70px] h-[70px]' src='/logoKimka.png'/>
+        </div>
+        <div className='basis-1/3 flex flex-row justify-end pr-6'>
+          <svg onClick={handleOpenMenu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </div>
+      </div>
+      {/* Main Menu */}
+      {
+        menu ? (
+          <div className="bg-black/60 h-[100vh] text-black flex flex-col items-center text-[40px] tracking-[1px] overflow-hidden origin-left duration-500" id="hammm">
+              <ul>
+                <li><a className="hover:textShadow duration-500 hover:translate-y-[-5px]" href="#">Home</a></li>
+                <li><a className="hover:textShadow duration-500 hover:translate-y-[-5px]" href="#">Shop</a></li>
+                <li><a className="hover:textShadow duration-500 hover:translate-y-[-5px]" href="#">Services</a></li>
+                <li><a className="hover:textShadow duration-500 hover:translate-y-[-5px]" href="#">Turns</a></li>
+                <li><a className="hover:textShadow duration-500 hover:translate-y-[-5px]" href='/Contact.jsx'>Contact</a></li>
+              </ul>
           </div>
-        </div>
-      </div>
-      <div>
-        {
-          // condicon ? VERDADERO : FALSO
-          menu === true ? (
-            <div className="h-screen w-full bg-black/50 absolute flex flex-row pt-[10rem] justify-center">
-              <div className="flex flex-col gap-6">
-                <p className="font-roboto text-3xl">Home</p>
-                <a href='#contact'>
-                  <p className="font-roboto">Contact</p>
-                </a>
-                <p className="font-roboto">About</p>
-                <p className="font-roboto">Shop</p>
-                <p className="font-roboto">Service</p>
-              </div>
-            </div>
-          ) : null
-        }
-      </div>
+        ) : ('')
+      }
+      
+      {/* Heading and Some text */}
     </div>
+    
   );
 };
 
